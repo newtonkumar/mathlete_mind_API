@@ -16,7 +16,7 @@ Step 10 : Run command **sudo /usr/bin/mysql -u root -p** and add password if wan
 Step 11 : Check all users details **SELECT User, Host, authentication_string FROM mysql.user;**
 Step 12 : Create DataBase **CREATE DATABASE DATABASE_NAME;** >>  
 Step 13 : To cross check run query **SHOW DATABASE;** and it will display all databases present
-Step 14 : Update **config.py** file with all database related details like user, password, database name, port & host
+Step 14 : Run **pip3 install python-dotenv** and add .env file under **/settings/.env** and add required env variable like database details, version details, debug mode, admin details, API keys, also add FLASK_APP=main.py and then import dotenv and use environment variable in **/settings/config.py** file with all database related details like user, password, database name, port & host
 Step 15 : If still not working with root password or password blank in user list then run query **UPDATE mysql.user SET authentication_string = PASSWORD('root') WHERE User = 'root'**;
 Step 16 : Run query **FLUSH PRIVILEGES;**
 Step 17 : **GRANT ALL PRIVILEGES ON DATABASE_NAME.* to root@localhost;**
@@ -62,15 +62,16 @@ Step 23 : Open Postmaster and add below API Urls
 Step 24 : Check details in table by **select * from students;**
 
 Some important commands : 
-sudo pip install mysql-connector-python
-pip install mysql-connector-python
+sudo pip3 install mysql-connector-python
+pip3 install mysql-connector-python
 sudo apt install python-pip
 pip3 install flask
 pip3 install flask-mysql
 pip3 install -U flask-cors
-pip show flask
+pip3 show flask
+pip3 install python-dotenv
 source venv/bin/activate
-pip freeze > requirements.txt
+pip3 freeze > requirements.txt
 python3 -m venv mmapi_env 
 . mmapi_env/bin/activate **To be run before any operation start for API
 

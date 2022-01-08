@@ -1,7 +1,7 @@
 import pymysql
 from app import app
 from v1.student import student
-from config import mysql
+from settings.config import mysql
 from flask import jsonify
 from flask import flash, request
 

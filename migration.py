@@ -1,6 +1,6 @@
 import pymysql
 from app import app
-from config import mysql
+from settings.config import mysql
 
 class DBHelper:
     def __init__(self):

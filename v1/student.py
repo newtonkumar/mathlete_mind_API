@@ -2,7 +2,7 @@ from math import trunc
 import pymysql
 from pymysql import cursors
 from app import app
-from config import mysql
+from settings.config import mysql
 from flask import jsonify
 from flask import flash, request
 from datetime import datetime
