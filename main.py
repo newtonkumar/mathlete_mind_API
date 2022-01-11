@@ -4,6 +4,7 @@ from v1.student import student
 from settings.config import mysql
 from flask import jsonify
 from flask import flash, request
+from v1.about import about
 
 #Version-1 API
 @app.route('/v1/student/insert', methods = ['POST'])
@@ -25,6 +26,13 @@ def get_student(student_id):
 @app.route('/v1/student/delete/<int:student_id>', methods = ['DELETE'])
 def delete_student(student_id):
     return student.delete(student_id)
+
+#API : About Page
+@app.route('/v1/about/details', methods = ['GET'])
+def details():
+    return about.details()
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
